@@ -6,9 +6,12 @@ use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
-#[ApiResource(filters: ['product.date_filter'])]
+#[ApiResource(operations: [
+    new GetCollection()
+])]
 class Product
 {
     #[ORM\Id]
