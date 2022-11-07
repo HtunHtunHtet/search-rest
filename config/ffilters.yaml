@@ -1,0 +1,5 @@
+services:
+  product.data_filter:
+    parent: 'api_platform.doctrine.orm.date_filter'
+    arguments: [ { dateProperty: ~ } ]
+    tags:  [ 'api_platform.filter' ]

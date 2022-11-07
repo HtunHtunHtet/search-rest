@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
+#[ApiResource(filters: ['product.date_filter'])]
 class Product
 {
     #[ORM\Id]
